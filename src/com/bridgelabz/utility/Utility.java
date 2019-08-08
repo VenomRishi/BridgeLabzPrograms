@@ -310,10 +310,9 @@ public class Utility {
 	 * @return delta finding delta using formula
 	 */
 
-	public double FindDeltaSquarRoot(int a, int b, int c) {
+	public double FindDelta(int a, int b, int c) {
 		int delta = (b * b) - (4 * a * c);
-		double sqrtDelta = Math.sqrt(delta);
-		return sqrtDelta;
+		return delta;
 	}
 
 	/**
@@ -324,7 +323,9 @@ public class Utility {
 	 * @param sqrtDelta
 	 * @return
 	 */
-	public double QuadraticEquation1(int a, int b, double sqrtDelta) {
+	public double QuadraticEquation1(int a, int b, double delta) {
+		double absDelta=Math.abs(delta);
+		double sqrtDelta = Math.sqrt(absDelta);
 		double equation1 = (-b + sqrtDelta) / (2 * a);
 		return equation1;
 	}
@@ -334,10 +335,12 @@ public class Utility {
 	 * 
 	 * @param a
 	 * @param b
-	 * @param sqrtDelta
+	 * @param delta
 	 * @return
 	 */
-	public double QuadraticEquation2(int a, int b, double sqrtDelta) {
+	public double QuadraticEquation2(int a, int b, double delta) {
+		double absDelta=Math.abs(delta);
+		double sqrtDelta = Math.sqrt(absDelta);
 		double equation2 = (-b - sqrtDelta) / (2 * a);
 		return equation2;
 	}
@@ -434,6 +437,12 @@ public class Utility {
 	public double MathRandomNumber() {
 
 		return Math.random();
+	}
+	public double MathMinNumber(double a, double b) {
+		return Math.min(a, b);
+	}
+	public double MathMaxNumber(double a, double b) {
+		return Math.max(a, b);
 	}
 
 }

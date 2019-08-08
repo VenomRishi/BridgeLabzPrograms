@@ -20,7 +20,7 @@ public class Quadratic {
 	public static void main(String[] args) {
 		Utility utility = new Utility();
 		int a, b, c;
-		double sqrtDelta;
+		double delta=0;
 		
 		double equation1,equation2;
 		scanner = new Scanner(System.in);
@@ -28,14 +28,14 @@ public class Quadratic {
 		a=scanner.nextInt();
 		System.out.println("Enter value for b");
 		b=scanner.nextInt();
-		System.out.println("Enter value for c");
+		System.out.println("Enter va3lue for c");
 		c=scanner.nextInt();
 		
 		//now we are going to find delta
-		sqrtDelta=utility.FindDeltaSquarRoot(a,b,c);
+		delta=utility.FindDelta(a,b,c);
 		
-		equation1=utility.QuadraticEquation1(a,b,sqrtDelta);
-		equation2=utility.QuadraticEquation2(a,b,sqrtDelta);
+		equation1=(double)utility.QuadraticEquation1(a,b,delta);
+		equation2=(double)utility.QuadraticEquation2(a,b,delta);
 		
 		System.out.println("Root 1 of X is :"+equation1);
 		System.out.println("Root 2 of X is :"+equation2);
