@@ -324,7 +324,7 @@ public class Utility {
 	 * @return
 	 */
 	public double QuadraticEquation1(int a, int b, double delta) {
-		double absDelta=Math.abs(delta);
+		double absDelta = Math.abs(delta);
 		double sqrtDelta = Math.sqrt(absDelta);
 		double equation1 = (-b + sqrtDelta) / (2 * a);
 		return equation1;
@@ -339,7 +339,7 @@ public class Utility {
 	 * @return
 	 */
 	public double QuadraticEquation2(int a, int b, double delta) {
-		double absDelta=Math.abs(delta);
+		double absDelta = Math.abs(delta);
 		double sqrtDelta = Math.sqrt(absDelta);
 		double equation2 = (-b - sqrtDelta) / (2 * a);
 		return equation2;
@@ -386,63 +386,106 @@ public class Utility {
 	}
 
 	/**
-	 * Purpose: Method is written for Converting Temperature Fahrenheit 
-	 * 			to Celsius
+	 * Purpose: Method is written for Converting Temperature Fahrenheit to Celsius
 	 * 
 	 * @param temperatureInFerenheit
-	 * @return	temperatureInCelcius return temperature in celsius
+	 * @return temperatureInCelcius return temperature in celsius
 	 */
 	public double FahrenheitToCelsius(double temperatureInFerenheit) {
 		double temperatureInCelcius;
 		temperatureInCelcius = ((temperatureInFerenheit - 32) * 5) / 9;
 		return temperatureInCelcius;
 	}
-	
+
 	/**
-	 * Purpose: Method is written for Converting Temperature Celcius 
-	 * 			to Fahrenheit 
-	 * 			
+	 * Purpose: Method is written for Converting Temperature Celcius to Fahrenheit
+	 * 
 	 * 
 	 * @param temperatureInCelsius
-	 * @return	temperatureInFahrenheit return temperature in fahrenheit
+	 * @return temperatureInFahrenheit return temperature in fahrenheit
 	 */
 	public double CelsiusToFahrenheit(double temperatureInCelsius) {
 		double temperatureInFahrenheit;
-		temperatureInFahrenheit = ((temperatureInCelsius * 9) /5)  + 32;
+		temperatureInFahrenheit = ((temperatureInCelsius * 9) / 5) + 32;
 		return temperatureInFahrenheit;
 	}
 
 	/**
-	 * Purpose: This method will calculate the EMI for the month on the basis
-	 * 			of loan amount for particular year and it will be depend upon
-	 * 			the rate of interest given for the loan.
+	 * Purpose: This method will calculate the EMI for the month on the basis of
+	 * loan amount for particular year and it will be depend upon the rate of
+	 * interest given for the loan.
 	 * 
-	 * @param principalLoanAmount 	input taken for principal amount of loan
-	 * @param year					input taken for how much year of loan
-	 * @param rOI					input taken for interest for the loan
-	 * @return		paymentAmountForMonth		in this it calculating the 
-	 * 											amount to pay for every month
+	 * @param principalLoanAmount input taken for principal amount of loan
+	 * @param year                input taken for how much year of loan
+	 * @param rOI                 input taken for interest for the loan
+	 * @return paymentAmountForMonth
+	 * 
+	 *         in this it calculating the amount to pay for every month
 	 */
 	public double LoanCalculator(int principalLoanAmount, int year, double rOI) {
 
-		double payment,r;
+		double payment, r;
 		int n;
-		n=12*year;
-		r=(rOI/(12*100));
-		
-		payment=(principalLoanAmount*r)/(1-Math.pow(1+r, -n));
+		n = 12 * year;
+		r = (rOI / (12 * 100));
+
+		payment = (principalLoanAmount * r) / (1 - Math.pow(1 + r, -n));
 		return payment;
 	}
 
+	/**
+	 * Purpose: Generate Random Number using Math.random() method
+	 * 
+	 * @return return random number
+	 */
 	public double MathRandomNumber() {
 
 		return Math.random();
 	}
+
+	/**
+	 * Purpose: Finding Minimum between two number using Math.min() method
+	 * 
+	 * @param a input of array index 1st
+	 * @param b input of array index 2st
+	 * @return compare and return minimum between two
+	 */
 	public double MathMinNumber(double a, double b) {
 		return Math.min(a, b);
 	}
+
+	/**
+	 * Purpose: Finding Maximum between two number using Math.max() method
+	 * 
+	 * @param a input of array index 1st
+	 * @param b input of array index 2st
+	 * @return compare and return maximum between two
+	 */
 	public double MathMaxNumber(double a, double b) {
 		return Math.max(a, b);
+	}
+
+	/**
+	 * Purpose: Reversing the String Array
+	 * 
+	 * @param namesArray    getting array from the user input
+	 * @param start         this parameter tells the starting array index
+	 * @param lengthOfArray this parameter tells the ending array index
+	 * @return reverseArray it returns the reverse String array
+	 */
+	public String[] ReverseStringArray(String[] namesArray, int start, int lengthOfArray) {
+
+		// for reversing the nameArray
+
+		String temp;
+		while (start < lengthOfArray) {
+			temp = namesArray[start];
+			namesArray[start] = namesArray[lengthOfArray];
+			namesArray[lengthOfArray] = temp;
+			start++;
+			lengthOfArray--;
+		}
+		return namesArray;
 	}
 
 }

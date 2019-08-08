@@ -1,3 +1,13 @@
+/******************************************************************************
+ *  Purpose: Program is written for Finding Random 5 numbers and to find
+ *  		 minimum, maximum, average.
+ *
+ *  @author  Rishikesh Mhatre
+ *  @version 1.0
+ *  @since   08-08-2019
+ *
+ ******************************************************************************/
+
 package com.bridgelabz.functional;
 
 import com.bridgelabz.utility.Utility;
@@ -6,7 +16,7 @@ public class Stats5 {
 
 	public static void main(String[] args) {
 		Utility utility = new Utility();
-		double tempMin = 0.0, tempMax = 0.0,sum=0.0,avg=0.0;
+		double tempMin = 0.0, tempMax = 0.0, sum = 0.0, avg = 0.0;
 		double fiveRandomNumberArray[] = new double[5];
 		for (int i = 0; i < fiveRandomNumberArray.length; i++) {
 			fiveRandomNumberArray[i] = utility.MathRandomNumber();
@@ -15,13 +25,13 @@ public class Stats5 {
 		for (int i = 0; i < fiveRandomNumberArray.length; i++) {
 			System.out.println(fiveRandomNumberArray[i]);
 		}
-		
+
 //		for finding avarage
-		for(int i=0;i<fiveRandomNumberArray.length;i++) {
-			sum+=fiveRandomNumberArray[i];
+		for (int i = 0; i < fiveRandomNumberArray.length; i++) {
+			sum += fiveRandomNumberArray[i];
 		}
-		avg=sum/5;
-		System.out.println("Average : "+avg);
+		avg = sum / 5;
+		System.out.println("Average : " + avg);
 
 		// for finding minimum from array
 		tempMin = utility.MathMinNumber(fiveRandomNumberArray[0], fiveRandomNumberArray[1]);

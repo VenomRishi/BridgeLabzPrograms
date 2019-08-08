@@ -39,6 +39,8 @@ public class Quadratic {
 		
 		System.out.println("Root 1 of X is :"+equation1);
 		System.out.println("Root 2 of X is :"+equation2);
+		
+		scanner.close();
 	}
 
 }
