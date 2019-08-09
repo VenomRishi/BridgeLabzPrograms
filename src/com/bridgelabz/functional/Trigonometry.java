@@ -1,3 +1,13 @@
+/******************************************************************************
+ *  Purpose: Program is written for performing trigonometric 
+ *  		 function.
+ *  		 
+ *
+ *  @author  Rishikesh Mhatre
+ *  @version 1.0
+ *  @since   09-08-2019
+ *
+ ******************************************************************************/
 package com.bridgelabz.functional;
 
 import java.util.Scanner;

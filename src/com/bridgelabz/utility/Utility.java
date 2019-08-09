@@ -196,11 +196,15 @@ public class Utility {
 			if (leapYear) {
 				if (day > 0 && day <= 29) {
 					return true;
+				} else {
+					return false;
 				}
 
 			} else {
 				if (day > 0 && day <= 28) {
 					return true;
+				} else {
+					return false;
 				}
 			}
 
@@ -489,11 +493,11 @@ public class Utility {
 	}
 
 	/**
-	 * Purpose: To Perform Trigonometry operation
-	 * 			on the basis of degree it will give radians
+	 * Purpose: To Perform Trigonometry operation on the basis of degree it will
+	 * give radians
 	 * 
-	 * @param degree	input is taken from user
-	 * @return			returns radian of that degree
+	 * @param degree input is taken from user
+	 * @return returns radian of that degree
 	 */
 	public double findRadiun(int degree) {
 		return Math.toRadians(degree);
@@ -502,66 +506,128 @@ public class Utility {
 	/**
 	 * Purpose: To find sin of trigonometry
 	 * 
-	 * @param radiun	radian is taken from previous method
-	 * @return			returns sin of that radian
+	 * @param radiun radian is taken from previous method
+	 * @return returns sin of that radian
 	 */
 	public double findSin(double radiun) {
 		return Math.sin(radiun);
 	}
-	
+
 	/**
 	 * Purpose: To find cos of trigonometry
 	 * 
-	 * @param radiun	radian is taken from previous method
-	 * @return			returns cos of that radian
+	 * @param radiun radian is taken from previous method
+	 * @return returns cos of that radian
 	 */
 	public double findCos(double radiun) {
 		return Math.cos(radiun);
 	}
+
 	/**
 	 * Purpose: To find tan of trigonometry
 	 * 
-	 * @param radiun	radian is taken from previous method
-	 * @return			returns tan of that radian
+	 * @param radiun radian is taken from previous method
+	 * @return returns tan of that radian
 	 */
 	public double findTan(double radiun) {
 		return Math.tan(radiun);
 	}
-	
+
 	/**
 	 * Purpose: To find cot of trigonometry
 	 * 
-	 * @param radiun	radian is taken from previous method
-	 * @return			returns cot of that radian
+	 * @param radiun radian is taken from previous method
+	 * @return returns cot of that radian
 	 */
 	public double findCot(double radiun) {
 		double cot;
-		cot=1/Math.tan(radiun);
+		cot = 1 / Math.tan(radiun);
 		return cot;
 	}
-	
+
 	/**
 	 * Purpose: To find sec of trigonometry
 	 * 
-	 * @param radiun	radian is taken from previous method
-	 * @return			returns sec of that radian
+	 * @param radiun radian is taken from previous method
+	 * @return returns sec of that radian
 	 */
 	public double findSec(double radiun) {
 		double sec;
-		sec=1/Math.cos(radiun);
+		sec = 1 / Math.cos(radiun);
 		return sec;
 	}
-	
+
 	/**
 	 * Purpose: To find cosec of trigonometry
 	 * 
-	 * @param radiun	radian is taken from previous method
-	 * @return			returns csc of that radian
+	 * @param radiun radian is taken from previous method
+	 * @return returns csc of that radian
 	 */
 	public double findCosec(double radiun) {
 		double csc;
-		csc=1/Math.sin(radiun);
+		csc = 1 / Math.sin(radiun);
 		return csc;
+	}
+
+	public double velocityIntoSpeed(int velocity) {
+		double speed;
+		speed = velocity * 0.609;
+		return speed;
+	}
+
+	/**
+	 * Purpose: 
+	 * 
+	 * @param temperatureInFahrenheit
+	 * @param speed
+	 * @return
+	 */
+	public double CalculateWindChill(double temperatureInFahrenheit, double speed) {
+		double a, windChill, b, c;
+		a = 0.615 * temperatureInFahrenheit;
+		b = 0.4275 * temperatureInFahrenheit;
+		c = b - 35.75;
+		windChill = 35.74 + a + c * speed;
+		// windchill cannot be negative
+		windChill = Math.abs(windChill);
+		return windChill;
+	}
+
+	/**
+	 * Purpose: To Calculate Day Of a Week
+	 * 
+	 * @param day		input taken from user
+	 * @param month		input taken from user
+	 * @param year		input taken from user
+	 * @return		dayOfWeek	return day for week like Monday Tuesday
+	 */
+	public int CalculateDayOfWeek(int day, int month, int year) {
+		int y1, x, m, d1;
+		y1 = year - (14 - month) / 12;
+		x = y1 + (y1 / 4) - (y1 / 100) + (y1 / 400);
+		m = month + 12 * ((14 - month) / 12) - 2;
+		d1 = (day + x + 31 * m / 12) % 7;
+		return d1;
+	}
+
+	public int PowerOfTwo(int number) {
+		int result;
+		result=(int)Math.pow(number, 2);
+		return result;
+	}
+
+	public void PrintHarmonic(int number) {
+		System.out.print("H=");
+		for(int i=1;i<=number;i++) {
+			if(i!=number) {
+				System.out.print("1/"+i);
+				System.out.print(" + ");	
+			}else {
+				System.out.print("1/"+i);
+			}
+			
+		}
+		
 	}
 
 }
