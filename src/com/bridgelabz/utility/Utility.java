@@ -488,4 +488,80 @@ public class Utility {
 		return namesArray;
 	}
 
+	/**
+	 * Purpose: To Perform Trigonometry operation
+	 * 			on the basis of degree it will give radians
+	 * 
+	 * @param degree	input is taken from user
+	 * @return			returns radian of that degree
+	 */
+	public double findRadiun(int degree) {
+		return Math.toRadians(degree);
+	}
+
+	/**
+	 * Purpose: To find sin of trigonometry
+	 * 
+	 * @param radiun	radian is taken from previous method
+	 * @return			returns sin of that radian
+	 */
+	public double findSin(double radiun) {
+		return Math.sin(radiun);
+	}
+	
+	/**
+	 * Purpose: To find cos of trigonometry
+	 * 
+	 * @param radiun	radian is taken from previous method
+	 * @return			returns cos of that radian
+	 */
+	public double findCos(double radiun) {
+		return Math.cos(radiun);
+	}
+	/**
+	 * Purpose: To find tan of trigonometry
+	 * 
+	 * @param radiun	radian is taken from previous method
+	 * @return			returns tan of that radian
+	 */
+	public double findTan(double radiun) {
+		return Math.tan(radiun);
+	}
+	
+	/**
+	 * Purpose: To find cot of trigonometry
+	 * 
+	 * @param radiun	radian is taken from previous method
+	 * @return			returns cot of that radian
+	 */
+	public double findCot(double radiun) {
+		double cot;
+		cot=1/Math.tan(radiun);
+		return cot;
+	}
+	
+	/**
+	 * Purpose: To find sec of trigonometry
+	 * 
+	 * @param radiun	radian is taken from previous method
+	 * @return			returns sec of that radian
+	 */
+	public double findSec(double radiun) {
+		double sec;
+		sec=1/Math.cos(radiun);
+		return sec;
+	}
+	
+	/**
+	 * Purpose: To find cosec of trigonometry
+	 * 
+	 * @param radiun	radian is taken from previous method
+	 * @return			returns csc of that radian
+	 */
+	public double findCosec(double radiun) {
+		double csc;
+		csc=1/Math.sin(radiun);
+		return csc;
+	}
+
 }
