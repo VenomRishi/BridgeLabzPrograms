@@ -610,9 +610,9 @@ public class Utility {
 		return d1;
 	}
 
-	public int PowerOfTwo(int number) {
+	public int PowerOfTwo(int number,int powerValue) {
 		int result;
-		result=(int)Math.pow(number, 2);
+		result=(int)Math.pow(number, powerValue);
 		return result;
 	}
 

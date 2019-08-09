@@ -21,11 +21,11 @@ public class PowerOf2 {
 		int number, result, powerOfNumber;
 		System.out.println("Enter Number For Finding Table of Power of Two: ");
 		number = scanner.nextInt();
-		powerOfNumber = utility.PowerOfTwo(number);// 5 ==32
+		powerOfNumber = utility.PowerOfTwo(2,number);// 5 ==32
 
 		for (int i = 1; i <= powerOfNumber; i++) {
 
-			result = utility.PowerOfTwo(i);
+			result = utility.PowerOfTwo(i,2);
 			System.out.println(i + " to Power of 2 is : " + result);
 
 		}

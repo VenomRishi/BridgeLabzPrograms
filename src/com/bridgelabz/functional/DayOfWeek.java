@@ -27,7 +27,7 @@ public class DayOfWeek {
 		month=scanner.nextInt();
 		System.out.println("Enter Year: ");
 		year=scanner.nextInt();
-		leapYear=utility.LeapYear(year);
+		leapYear=utility.LeapYear(year);//false
 		isValidDate=utility.CheckValidationForSpringSeason(month, day, leapYear);
 		if(isValidDate) {
 			d1=utility.CalculateDayOfWeek(day,month,year);
