@@ -690,4 +690,110 @@ public class Utility {
 		
 	}
 
+	public double CalculateAngleX(int x) {
+		
+		return x%(2*180);
+	}
+
+	public void PrintSinXSeries(double angleX, int noOddSeries) {
+		
+		int count=1;
+		String plus="+",minus="-";
+		System.out.print("Sin("+angleX+") = ");
+		System.out.print(angleX +" - ");
+		for(int i=3;i<=noOddSeries;) {
+			if(count%2!=0) {
+				System.out.print(Math.pow(angleX, i)+" / "+CalculateFactorial(i));
+				if(i!=noOddSeries) {
+					System.out.print(" + ");
+				}
+				
+				count++;
+				
+			}else {
+				System.out.print(Math.pow(angleX, i)+" / "+CalculateFactorial(i));
+				if(i!=noOddSeries) {
+					System.out.print(" - ");	
+				}
+				count++;
+			}
+			i=i+2;
+			
+		}
+		
+	}
+	public int CalculateFactorial(int noOddSeries) {
+		int fact=1;
+		for (int i=1;i<=noOddSeries;i++) {
+			fact*=i;
+		}
+		return fact;
+	}
+
+	public void PrintCosXSeries(double angleX, int noEvenSeries) {
+		int count=1;
+		
+		System.out.print("Sin("+angleX+") = ");
+		System.out.print( "1 - ");
+		for(int i=2;i<=noEvenSeries;) {
+			if(count%2==0) {
+				System.out.print(Math.pow(angleX, i)+" / "+CalculateFactorial(i));
+				if(i!=noEvenSeries) {
+					System.out.print(" + ");
+				}
+				
+				count++;
+				
+			}else {
+				System.out.print(Math.pow(angleX, i)+" / "+CalculateFactorial(i));
+				if(i!=noEvenSeries) {
+					System.out.print(" - ");	
+				}
+				count++;
+			}
+			i=i+2;
+			
+		}
+		
+	}
+
+	public void GamlingSimulation(int stake, int goals, int days) {
+	
+		int tempStake=stake;
+		int trails=0;
+		int win=0;
+		int countLoose=0,countWin=0;
+		int percentageWin,percentageLoose,numberOfBets=0,avgBets;
+		for(int i=0;i<=days;i++) {
+			while(tempStake>0&&tempStake<goals) {
+				if(Math.random()>0.5) {
+					
+					tempStake++;
+					trails++;
+//					countWin++;
+				}else {
+					tempStake--;
+					trails++;
+//					countLoose++;
+				}
+				if(tempStake==goals) 
+					win++;
+			}
+			
+			
+			
+		}
+		percentageWin=win*100/days;
+		
+		
+
+		
+		System.out.println("Gamler Won :"+win+" times");
+		System.out.println("Percentage of Winning is :"+percentageWin);
+		System.out.println("Avg bets made :"+trails/days);
+		
+		
+		
+	}
+
 }

@@ -25,7 +25,7 @@ public class Sqrt {
 		System.out.println("Enter Nonnegative value");
 		c = scanner.nextInt();
 		if (c > 0) {
-			result =(int) utility.findSquareRootUsingNewtonsMethod(c);
+			result = utility.findSquareRootUsingNewtonsMethod(c);
 			System.out.println("Square Root of " + c + " using Newtons Law is " + result);
 		} else {
 			System.out.println("Please enter positive value..");
