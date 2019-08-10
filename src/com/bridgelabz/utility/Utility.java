@@ -576,7 +576,7 @@ public class Utility {
 	}
 
 	/**
-	 * Purpose: 
+	 * Purpose:
 	 * 
 	 * @param temperatureInFahrenheit
 	 * @param speed
@@ -596,10 +596,10 @@ public class Utility {
 	/**
 	 * Purpose: To Calculate Day Of a Week
 	 * 
-	 * @param day		input taken from user
-	 * @param month		input taken from user
-	 * @param year		input taken from user
-	 * @return		dayOfWeek	return day for week like Monday Tuesday
+	 * @param day   input taken from user
+	 * @param month input taken from user
+	 * @param year  input taken from user
+	 * @return dayOfWeek return day for week like Monday Tuesday
 	 */
 	public int CalculateDayOfWeek(int day, int month, int year) {
 		int y1, x, m, d1;
@@ -610,22 +610,82 @@ public class Utility {
 		return d1;
 	}
 
-	public int PowerOfTwo(int number,int powerValue) {
+	/**
+	 * @param number
+	 * @param powerValue
+	 * @return
+	 */
+	public int PowerOfTwo(int number, int powerValue) {
 		int result;
-		result=(int)Math.pow(number, powerValue);
+		result = (int) Math.pow(number, powerValue);
 		return result;
 	}
 
+	/**
+	 * @param number
+	 */
 	public void PrintHarmonic(int number) {
 		System.out.print("H=");
-		for(int i=1;i<=number;i++) {
-			if(i!=number) {
-				System.out.print("1/"+i);
-				System.out.print(" + ");	
-			}else {
-				System.out.print("1/"+i);
+		for (int i = 1; i <= number; i++) {
+			if (i != number) {
+				System.out.print("1/" + i);
+				System.out.print(" + ");
+			} else {
+				System.out.print("1/" + i);
 			}
-			
+
+		}
+
+	}
+
+	/**
+	 * @param c
+	 * @return
+	 */
+	public double findSquareRootUsingNewtonsMethod(int c) {
+		double t,epsilon;
+		t = c;
+//		epsilon=1*(Math.pow(10, -15));
+		epsilon=1e-15;
+		
+		while (Math.abs(t - c/t) > epsilon*t) {
+            t = (c/t + t) / 2.0;
+        }
+		return t;
+	}
+
+	/**
+	 * @param numberForCoinFlip
+	 */
+	public void FlipCoin(int numberForCoinFlip) {
+		double percentageOfHeads,percentageOfTails;
+		int headsCount=0,tailsCount=0;
+		
+		for(int i=1;i<=numberForCoinFlip;i++) {
+			if(Math.random()<.5) {
+				System.out.println("Heads");
+				headsCount++;
+			}else {
+				System.out.println("Tails");
+				tailsCount++;
+			}
+		}
+		percentageOfHeads=(int)headsCount*100/numberForCoinFlip;
+		percentageOfTails=(int)tailsCount*100/numberForCoinFlip;
+		System.out.println("Percentage of Heads is : "+percentageOfHeads);
+		System.out.println("Percentage of Tails is : "+percentageOfTails);
+		
+	}
+	public boolean isPrime(int number) {
+		if(number==0||number==1) {
+			return false;
+		}else {
+			for (int i=2;i<=number/2;i++) {
+				if(number%i==0) {
+					return false;
+				}
+			}
+			return true;
 		}
 		
 	}

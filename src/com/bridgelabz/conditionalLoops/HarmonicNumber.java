@@ -1,3 +1,13 @@
+/******************************************************************************
+ *  Purpose: Program is written for finding Series of Harmonic Number.
+ *  		 
+ *
+ *  @author  Rishikesh Mhatre
+ *  @version 1.0
+ *  @since   09-08-2019
+ *
+ ******************************************************************************/
+
 package com.bridgelabz.conditionalLoops;
 
 import java.util.Scanner;
@@ -13,6 +23,8 @@ public class HarmonicNumber {
 		System.out.println("Enter Number Uptil you want to Find Harmonic");
 		number=scanner.nextInt();
 		utility.PrintHarmonic(number);
+		
+		scanner.close();
 
 	}
 
