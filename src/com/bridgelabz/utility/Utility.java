@@ -442,7 +442,7 @@ public class Utility {
 	 * 
 	 * @return return random number
 	 */
-	public double MathRandomNumber() {
+	public double mathRandomNumber() {
 
 		return Math.random();
 	}
@@ -454,7 +454,7 @@ public class Utility {
 	 * @param b input of array index 2st
 	 * @return compare and return minimum between two
 	 */
-	public double MathMinNumber(double a, double b) {
+	public double mathMinNumber(double a, double b) {
 		return Math.min(a, b);
 	}
 
@@ -465,7 +465,7 @@ public class Utility {
 	 * @param b input of array index 2st
 	 * @return compare and return maximum between two
 	 */
-	public double MathMaxNumber(double a, double b) {
+	public double mathMaxNumber(double a, double b) {
 		return Math.max(a, b);
 	}
 
@@ -676,6 +676,10 @@ public class Utility {
 		System.out.println("Percentage of Tails is : "+percentageOfTails);
 		
 	}
+	/**
+	 * @param number
+	 * @return
+	 */
 	public boolean isPrime(int number) {
 		if(number==0||number==1) {
 			return false;
@@ -695,10 +699,14 @@ public class Utility {
 		return x%(2*180);
 	}
 
+	/**
+	 * @param angleX
+	 * @param noOddSeries
+	 */
 	public void PrintSinXSeries(double angleX, int noOddSeries) {
 		
 		int count=1;
-		String plus="+",minus="-";
+
 		System.out.print("Sin("+angleX+") = ");
 		System.out.print(angleX +" - ");
 		for(int i=3;i<=noOddSeries;) {
@@ -722,6 +730,10 @@ public class Utility {
 		}
 		
 	}
+	/**
+	 * @param noOddSeries
+	 * @return
+	 */
 	public int CalculateFactorial(int noOddSeries) {
 		int fact=1;
 		for (int i=1;i<=noOddSeries;i++) {
@@ -730,6 +742,10 @@ public class Utility {
 		return fact;
 	}
 
+	/**
+	 * @param angleX
+	 * @param noEvenSeries
+	 */
 	public void PrintCosXSeries(double angleX, int noEvenSeries) {
 		int count=1;
 		
@@ -757,17 +773,20 @@ public class Utility {
 		
 	}
 
+	/**
+	 * @param stake
+	 * @param goals
+	 * @param days
+	 */
 	public void GamlingSimulation(int stake, int goals, int days) {
 	
 		int tempStake=stake;
 		int trails=0;
 		int win=0;
-		int countLoose=0,countWin=0;
-		int percentageWin,percentageLoose,numberOfBets=0,avgBets;
+		int percentageWin;
 		for(int i=0;i<=days;i++) {
 			while(tempStake>0&&tempStake<goals) {
 				if(Math.random()>0.5) {
-					
 					tempStake++;
 					trails++;
 //					countWin++;
@@ -795,5 +814,62 @@ public class Utility {
 		
 		
 	}
+
+	/**
+	 * @param numberArray
+	 * @return
+	 */
+	public int findRepeatedInArray(int[] numberArray) {
+		
+		for(int i=0;i<numberArray.length;i++) {
+			for(int j=i+1;j<numberArray.length;j++) {
+				if(numberArray[i]==numberArray[j]) {
+					return numberArray[i];
+				}
+			}	
+		}
+		return 0;
+		
+	}
+
+	/**
+	 * @param smallest
+	 * @param secondSmallest
+	 * @param numberArray
+	 * @return
+	 */
+	public int findSecondSmaller(int smallest, int secondSmallest, int[] numberArray) {
+		for(int i=0;i<numberArray.length;i++) {
+			if(numberArray[i]<smallest) {
+				secondSmallest=smallest;
+				smallest=numberArray[i];
+			}
+			else if(numberArray[i]<secondSmallest&&numberArray[i]!=smallest) {
+				secondSmallest=numberArray[i];
+			}
+		}
+		return secondSmallest;
+	}
+
+	/**
+	 * @param largest
+	 * @param secondLargest
+	 * @param numberArray
+	 * @return
+	 */
+	public int findSecondLargest(int largest, int secondLargest, int[] numberArray) {
+		for(int i=0;i<numberArray.length;i++) {
+			if(numberArray[i]>largest) {
+				secondLargest=largest;
+				largest=numberArray[i];
+			}
+			else if(numberArray[i]>secondLargest&&numberArray[i]!=largest) {
+				secondLargest=numberArray[i];
+			}
+		}
+		return secondLargest;
+	}
+
+
 
 }
