@@ -11,9 +11,10 @@ public class RollDice {
 		Scanner scanner=new Scanner(System.in);
 		int nTimesRollDice;
 		int diceRoll;
-		int arrayCount[]=new int[5];
+	
 		
 		int count1=0,count2=0,count3=0,count4=0,count5=0,count6=0;
+		
 		System.out.println("Enter number for rolling dice n times :");
 		nTimesRollDice=scanner.nextInt();
 		for(int i=0;i<nTimesRollDice;i++) {
@@ -45,23 +46,23 @@ public class RollDice {
 				break;
 				
 			}
+			
 		}
-		arrayCount[0]=count1;
-		arrayCount[1]=count2;
-		arrayCount[2]=count3;
-		arrayCount[3]=count4;
-		arrayCount[4]=count5;
-		arrayCount[5]=count6;
+		if(count1>=count2&&count1>=count3&&count1>=count4&&count1>=count5&&count1>=count6) 
+			System.out.println("Dice 1 fall maximum times count is : "+count1);
+		else if(count2>=count1&&count2>=count3&&count2>=count4&&count2>=count5&&count2>=count6) 
+			System.out.println("Dice 2 fall maximum times count is : "+count2);
+		else if(count3>=count1&&count3>=count2&&count3>=count4&&count3>=count5&&count3>=count6) 
+			System.out.println("Dice 3 fall maximum times count is : "+count3);
+		else if(count4>=count1&&count4>=count2&&count4>=count3&&count4>=count5&&count4>=count6) 
+			System.out.println("Dice 4 fall maximum times count is : "+count4);
+		else if(count5>=count1&&count5>=count2&&count5>=count3&&count5>=count4&&count5>=count6) 
+			System.out.println("Dice 5 fall maximum times count is : "+count5);
+		else 
+			System.out.println("Dice 6 fall maximum times count is : "+count6);
 		
-		int max = arrayCount[0];
-        for(int i = 0; i < 5; i++)
-        {
-            if(max < arrayCount[i])
-            {
-                max = arrayCount[i];
-            }
-        }
         
+        scanner.close();
 	}
 
 }

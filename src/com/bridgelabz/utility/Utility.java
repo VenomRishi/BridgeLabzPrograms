@@ -731,12 +731,12 @@ public class Utility {
 		
 	}
 	/**
-	 * @param noOddSeries
+	 * @param number
 	 * @return
 	 */
-	public int CalculateFactorial(int noOddSeries) {
+	public int CalculateFactorial(int number) {
 		int fact=1;
-		for (int i=1;i<=noOddSeries;i++) {
+		for (int i=1;i<=number;i++) {
 			fact*=i;
 		}
 		return fact;
