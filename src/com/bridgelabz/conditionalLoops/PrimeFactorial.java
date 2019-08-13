@@ -19,16 +19,21 @@ public class PrimeFactorial {
 	public static void main(String[] args) {
 		Utility utility=new Utility();
 		Scanner scanner=new Scanner(System.in);
-		int number,fact=1;
+		int number;
+		
 		
 		System.out.println("Enter number");
 		number=scanner.nextInt();
-		
+		int fact=1;
 		for(int i=2;i*i<=number;i++) {
+			
 			if(utility.isPrime(i)){
-				fact=fact*i;
+				
+				fact=utility.CalculateFactorial(i);
 				System.out.println("Factorial of number "+i+" is "+fact);
+				//fact=1;
 			}
+			
 		}
 		
 		scanner.close();
