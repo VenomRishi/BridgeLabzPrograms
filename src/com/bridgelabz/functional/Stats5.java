@@ -19,7 +19,7 @@ public class Stats5 {
 		double tempMin = 0.0, tempMax = 0.0, sum = 0.0, avg = 0.0;
 		double fiveRandomNumberArray[] = new double[5];
 		for (int i = 0; i < fiveRandomNumberArray.length; i++) {
-			fiveRandomNumberArray[i] = utility.MathRandomNumber();
+			fiveRandomNumberArray[i] = utility.mathRandomNumber();
 		}
 		System.out.println("Random Number");
 		for (int i = 0; i < fiveRandomNumberArray.length; i++) {
@@ -34,16 +34,16 @@ public class Stats5 {
 		System.out.println("Average : " + avg);
 
 		// for finding minimum from array
-		tempMin = utility.MathMinNumber(fiveRandomNumberArray[0], fiveRandomNumberArray[1]);
+		tempMin = utility.mathMinNumber(fiveRandomNumberArray[0], fiveRandomNumberArray[1]);
 		for (int i = 2; i < fiveRandomNumberArray.length; i++) {
-			tempMin = utility.MathMinNumber(tempMin, fiveRandomNumberArray[i]);
+			tempMin = utility.mathMinNumber(tempMin, fiveRandomNumberArray[i]);
 
 		}
 		System.out.println("Min Value :" + tempMin);
 //		for finding minimum from array
-		tempMax = utility.MathMaxNumber(fiveRandomNumberArray[0], fiveRandomNumberArray[1]);
+		tempMax = utility.mathMaxNumber(fiveRandomNumberArray[0], fiveRandomNumberArray[1]);
 		for (int i = 2; i < fiveRandomNumberArray.length; i++) {
-			tempMax = utility.MathMaxNumber(tempMax, fiveRandomNumberArray[i]);
+			tempMax = utility.mathMaxNumber(tempMax, fiveRandomNumberArray[i]);
 
 		}
 		System.out.println("Max Value :" + tempMax);
