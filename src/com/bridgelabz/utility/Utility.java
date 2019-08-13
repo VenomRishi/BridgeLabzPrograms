@@ -643,14 +643,14 @@ public class Utility {
 	 * @return
 	 */
 	public double findSquareRootUsingNewtonsMethod(int c) {
-		double t,epsilon;
+		double t, epsilon;
 		t = c;
 //		epsilon=1*(Math.pow(10, -15));
-		epsilon=1e-15;
-		
-		while (Math.abs(t - c/t) > epsilon*t) {
-            t = (c/t + t) / 2.0;
-        }
+		epsilon = 1e-15;
+
+		while (Math.abs(t - c / t) > epsilon * t) {
+			t = (c / t + t) / 2.0;
+		}
 		return t;
 	}
 
@@ -658,45 +658,46 @@ public class Utility {
 	 * @param numberForCoinFlip
 	 */
 	public void FlipCoin(int numberForCoinFlip) {
-		double percentageOfHeads,percentageOfTails;
-		int headsCount=0,tailsCount=0;
-		
-		for(int i=1;i<=numberForCoinFlip;i++) {
-			if(Math.random()<.5) {
+		double percentageOfHeads, percentageOfTails;
+		int headsCount = 0, tailsCount = 0;
+
+		for (int i = 1; i <= numberForCoinFlip; i++) {
+			if (Math.random() < .5) {
 				System.out.println("Heads");
 				headsCount++;
-			}else {
+			} else {
 				System.out.println("Tails");
 				tailsCount++;
 			}
 		}
-		percentageOfHeads=(int)headsCount*100/numberForCoinFlip;
-		percentageOfTails=(int)tailsCount*100/numberForCoinFlip;
-		System.out.println("Percentage of Heads is : "+percentageOfHeads);
-		System.out.println("Percentage of Tails is : "+percentageOfTails);
-		
+		percentageOfHeads = (int) headsCount * 100 / numberForCoinFlip;
+		percentageOfTails = (int) tailsCount * 100 / numberForCoinFlip;
+		System.out.println("Percentage of Heads is : " + percentageOfHeads);
+		System.out.println("Percentage of Tails is : " + percentageOfTails);
+
 	}
+
 	/**
 	 * @param number
 	 * @return
 	 */
 	public boolean isPrime(int number) {
-		if(number==0||number==1) {
+		if (number == 0 || number == 1) {
 			return false;
-		}else {
-			for (int i=2;i<=number/2;i++) {
-				if(number%i==0) {
+		} else {
+			for (int i = 2; i <= number / 2; i++) {
+				if (number % i == 0) {
 					return false;
 				}
 			}
 			return true;
 		}
-		
+
 	}
 
 	public double CalculateAngleX(int x) {
-		
-		return x%(2*180);
+
+		return x % (2 * 180);
 	}
 
 	/**
@@ -704,40 +705,41 @@ public class Utility {
 	 * @param noOddSeries
 	 */
 	public void PrintSinXSeries(double angleX, int noOddSeries) {
-		
-		int count=1;
 
-		System.out.print("Sin("+angleX+") = ");
-		System.out.print(angleX +" - ");
-		for(int i=3;i<=noOddSeries;) {
-			if(count%2!=0) {
-				System.out.print(Math.pow(angleX, i)+" / "+CalculateFactorial(i));
-				if(i!=noOddSeries) {
+		int count = 1;
+
+		System.out.print("Sin(" + angleX + ") = ");
+		System.out.print(angleX + " - ");
+		for (int i = 3; i <= noOddSeries;) {
+			if (count % 2 != 0) {
+				System.out.print(Math.pow(angleX, i) + " / " + CalculateFactorial(i));
+				if (i != noOddSeries) {
 					System.out.print(" + ");
 				}
-				
+
 				count++;
-				
-			}else {
-				System.out.print(Math.pow(angleX, i)+" / "+CalculateFactorial(i));
-				if(i!=noOddSeries) {
-					System.out.print(" - ");	
+
+			} else {
+				System.out.print(Math.pow(angleX, i) + " / " + CalculateFactorial(i));
+				if (i != noOddSeries) {
+					System.out.print(" - ");
 				}
 				count++;
 			}
-			i=i+2;
-			
+			i = i + 2;
+
 		}
-		
+
 	}
+
 	/**
 	 * @param number
 	 * @return
 	 */
 	public int CalculateFactorial(int number) {
-		int fact=1;
-		for (int i=1;i<=number;i++) {
-			fact*=i;
+		int fact = 1;
+		for (int i = 1; i <= number; i++) {
+			fact *= i;
 		}
 		return fact;
 	}
@@ -747,30 +749,30 @@ public class Utility {
 	 * @param noEvenSeries
 	 */
 	public void PrintCosXSeries(double angleX, int noEvenSeries) {
-		int count=1;
-		
-		System.out.print("Sin("+angleX+") = ");
-		System.out.print( "1 - ");
-		for(int i=2;i<=noEvenSeries;) {
-			if(count%2==0) {
-				System.out.print(Math.pow(angleX, i)+" / "+CalculateFactorial(i));
-				if(i!=noEvenSeries) {
+		int count = 1;
+
+		System.out.print("Sin(" + angleX + ") = ");
+		System.out.print("1 - ");
+		for (int i = 2; i <= noEvenSeries;) {
+			if (count % 2 == 0) {
+				System.out.print(Math.pow(angleX, i) + " / " + CalculateFactorial(i));
+				if (i != noEvenSeries) {
 					System.out.print(" + ");
 				}
-				
+
 				count++;
-				
-			}else {
-				System.out.print(Math.pow(angleX, i)+" / "+CalculateFactorial(i));
-				if(i!=noEvenSeries) {
-					System.out.print(" - ");	
+
+			} else {
+				System.out.print(Math.pow(angleX, i) + " / " + CalculateFactorial(i));
+				if (i != noEvenSeries) {
+					System.out.print(" - ");
 				}
 				count++;
 			}
-			i=i+2;
-			
+			i = i + 2;
+
 		}
-		
+
 	}
 
 	/**
@@ -779,40 +781,33 @@ public class Utility {
 	 * @param days
 	 */
 	public void GamlingSimulation(int stake, int goals, int days) {
-	
-		int tempStake=stake;
-		int trails=0;
-		int win=0;
+
+		int tempStake = stake;
+		int trails = 0;
+		int win = 0;
 		int percentageWin;
-		for(int i=0;i<=days;i++) {
-			while(tempStake>0&&tempStake<goals) {
-				if(Math.random()>0.5) {
+		for (int i = 0; i <= days; i++) {
+			while (tempStake > 0 && tempStake < goals) {
+				if (Math.random() > 0.5) {
 					tempStake++;
 					trails++;
 //					countWin++;
-				}else {
+				} else {
 					tempStake--;
 					trails++;
 //					countLoose++;
 				}
-				if(tempStake==goals) 
+				if (tempStake == goals)
 					win++;
 			}
-			
-			
-			
-		}
-		percentageWin=win*100/days;
-		
-		
 
-		
-		System.out.println("Gamler Won :"+win+" times");
-		System.out.println("Percentage of Winning is :"+percentageWin);
-		System.out.println("Avg bets made :"+trails/days);
-		
-		
-		
+		}
+		percentageWin = win * 100 / days;
+
+		System.out.println("Gamler Won :" + win + " times");
+		System.out.println("Percentage of Winning is :" + percentageWin);
+		System.out.println("Avg bets made :" + trails / days);
+
 	}
 
 	/**
@@ -820,16 +815,16 @@ public class Utility {
 	 * @return
 	 */
 	public int findRepeatedInArray(int[] numberArray) {
-		
-		for(int i=0;i<numberArray.length;i++) {
-			for(int j=i+1;j<numberArray.length;j++) {
-				if(numberArray[i]==numberArray[j]) {
+
+		for (int i = 0; i < numberArray.length; i++) {
+			for (int j = i + 1; j < numberArray.length; j++) {
+				if (numberArray[i] == numberArray[j]) {
 					return numberArray[i];
 				}
-			}	
+			}
 		}
 		return 0;
-		
+
 	}
 
 	/**
@@ -839,13 +834,12 @@ public class Utility {
 	 * @return
 	 */
 	public int findSecondSmaller(int smallest, int secondSmallest, int[] numberArray) {
-		for(int i=0;i<numberArray.length;i++) {
-			if(numberArray[i]<smallest) {
-				secondSmallest=smallest;
-				smallest=numberArray[i];
-			}
-			else if(numberArray[i]<secondSmallest&&numberArray[i]!=smallest) {
-				secondSmallest=numberArray[i];
+		for (int i = 0; i < numberArray.length; i++) {
+			if (numberArray[i] < smallest) {
+				secondSmallest = smallest;
+				smallest = numberArray[i];
+			} else if (numberArray[i] < secondSmallest && numberArray[i] != smallest) {
+				secondSmallest = numberArray[i];
 			}
 		}
 		return secondSmallest;
@@ -858,18 +852,378 @@ public class Utility {
 	 * @return
 	 */
 	public int findSecondLargest(int largest, int secondLargest, int[] numberArray) {
-		for(int i=0;i<numberArray.length;i++) {
-			if(numberArray[i]>largest) {
-				secondLargest=largest;
-				largest=numberArray[i];
-			}
-			else if(numberArray[i]>secondLargest&&numberArray[i]!=largest) {
-				secondLargest=numberArray[i];
+		for (int i = 0; i < numberArray.length; i++) {
+			if (numberArray[i] > largest) {
+				secondLargest = largest;
+				largest = numberArray[i];
+			} else if (numberArray[i] > secondLargest && numberArray[i] != largest) {
+				secondLargest = numberArray[i];
 			}
 		}
 		return secondLargest;
 	}
 
+	public void printKPattern() {
+		for (int i = 1; i <= 9; i++) {
+			for (int j = 1; j <= 13; j++) {
+				if (i == 1) {
+					if (j > 2 && j <= 10)
+						System.out.print(" ");
+					else
+						System.out.print("*");
 
+				}
+				if (i == 2) {
+					if (j > 2 && j <= 8)
+						System.out.print(" ");
+//					else if (j > 9 && j <= 11)
+//						System.out.print("*");
+					else if (j > 11)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+				}
+				if (i == 3) {
+					if (j > 2 && j <= 6)
+						System.out.print(" ");
+					else if (j > 6 && j <= 9)
+						System.out.print("*");
+					else if (j > 9)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+				}
+				if (i == 4) {
+					if (j > 2 && j <= 4)
+						System.out.print(" ");
+					else if (j > 4 && j <= 7)
+						System.out.print("*");
+					else if (j > 7)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+				}
+				if (i == 5) {
+					if (j > 5 && j <= 13)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+				}
+				if (i == 6) {
+					if (j > 2 && j <= 4)
+						System.out.print(" ");
+					else if (j > 4 && j <= 7)
+						System.out.print("*");
+					else if (j > 7)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+				}
+				if (i == 7) {
+					if (j > 2 && j <= 6)
+						System.out.print(" ");
+					else if (j > 6 && j <= 9)
+						System.out.print("*");
+					else if (j > 9)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+				}
+				if (i == 8) {
+					if (j > 2 && j <= 8)
+						System.out.print(" ");
+					else if (j > 9 && j <= 11)
+						System.out.print("*");
+					else if (j > 11)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+				}
+				if (i == 9) {
+					if (j > 2 && j <= 10)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+				}
+
+			}
+			System.out.println();
+		}
+
+	}
+
+	public void printDPattern() {
+		for (int i = 1; i <= 9; i++) {
+			for (int j = 1; j <= 15; j++) {
+				switch (i) {
+				case 1:
+					if (j > 10 && j <= 15)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+					break;
+				case 2:
+					if (j > 2 && j <= 10)
+						System.out.print(" ");
+					else if (j > 10 && j <= 12)
+						System.out.print("*");
+					else if (j > 12)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+					break;
+				case 3:
+					if (j > 2 && j <= 11)
+						System.out.print(" ");
+					else if (j > 11 && j <= 13)
+						System.out.print("*");
+					else if (j > 13)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+					break;
+				case 4:
+					if (j > 2 && j <= 12)
+						System.out.print(" ");
+					else if (j > 12 && j <= 15)
+						System.out.print("*");
+					else
+						System.out.print("*");
+					break;
+				case 5:
+					if (j > 2 && j <= 12)
+						System.out.print(" ");
+					else if (j > 12 && j <= 15)
+						System.out.print("*");
+					else
+						System.out.print("*");
+					break;
+				case 6:
+					if (j > 2 && j <= 12)
+						System.out.print(" ");
+					else if (j > 12 && j <= 15)
+						System.out.print("*");
+					else
+						System.out.print("*");
+					break;
+				case 7:
+					if (j > 2 && j <= 11)
+						System.out.print(" ");
+					else if (j > 11 && j <= 13)
+						System.out.print("*");
+					else if (j > 13)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+					break;
+				case 8:
+					if (j > 2 && j <= 10)
+						System.out.print(" ");
+					else if (j > 10 && j <= 12)
+						System.out.print("*");
+					else if (j > 12)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+					break;
+				case 9:
+					if (j > 10 && j <= 15)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+					break;
+				}
+			}
+			System.out.println();
+		}
+
+	}
+
+	public void printWPattern() {
+		for (int i = 1; i <= 9; i++) {
+			for (int j = 1; j <= 32; j++) {
+				switch (i) {
+				case 1:
+					if (j > 2 && j <= 15)
+						System.out.print(" ");
+					else if (j == 16)
+						System.out.print("*");
+					else if (j > 16 && j <= 29)
+						System.out.print(" ");
+					else if (j > 29 && j <= 31)
+						System.out.print("*");
+					else if (j == 32)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+					break;
+				case 2:
+					if (j == 1)
+						System.out.print(" ");
+					else if (j > 1 && j <= 3)
+						System.out.print("*");
+					else if (j > 3 && j <= 14)
+						System.out.print(" ");
+					else if (j > 14 && j <= 17)
+						System.out.print("*");
+					else if (j > 17 && j <= 28)
+						System.out.print(" ");
+					else if (j > 28 && j <= 30)
+						System.out.print("*");
+					else if (j > 30)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+
+					break;
+				case 3:
+					if (j <= 2)
+						System.out.print(" ");
+					else if (j > 2 && j <= 4)
+						System.out.print("*");
+					else if (j > 4 && j <= 13)
+						System.out.print(" ");
+					else if (j > 13 && j <= 15)
+						System.out.print("*");
+					else if (j == 16)
+						System.out.print(" ");
+					else if (j > 16 && j <= 18)
+						System.out.print("*");
+					else if (j > 18 && j <= 27)
+						System.out.print(" ");
+					else if (j > 27 && j <= 29)
+						System.out.print("*");
+					else if (j > 29)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+					break;
+				case 4:
+					if (j <= 3)
+						System.out.print(" ");
+					else if (j > 3 && j <= 5)
+						System.out.print("*");
+					else if (j > 5 && j <= 12)
+						System.out.print(" ");
+					else if (j > 12 && j <= 14)
+						System.out.print("*");
+					else if (j > 14 && j <= 17)
+						System.out.print(" ");
+					else if (j > 17 && j <= 19)
+						System.out.print("*");
+					else if (j > 19 && j <= 26)
+						System.out.print(" ");
+					else if (j > 26 && j <= 28)
+						System.out.print("*");
+					else if (j > 28)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+					break;
+				case 5:
+					if (j <= 4)
+						System.out.print(" ");
+					else if (j > 4 && j <= 6)
+						System.out.print("*");
+					else if (j > 6 && j <= 11)
+						System.out.print(" ");
+					else if (j > 11 && j <= 13)
+						System.out.print("*");
+					else if (j > 13 && j <= 18)
+						System.out.print(" ");
+					else if (j > 18 && j <= 20)
+						System.out.print("*");
+					else if (j > 20 && j <= 25)
+						System.out.print(" ");
+					else if (j > 25 && j <= 27)
+						System.out.print("*");
+					else if (j > 27)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+					break;
+				case 6:
+					if (j <= 5)
+						System.out.print(" ");
+					else if (j > 5 && j <= 7)
+						System.out.print("*");
+					else if (j > 7 && j <= 10)
+						System.out.print(" ");
+					else if (j > 10 && j <= 12)
+						System.out.print("*");
+					else if (j > 12 && j <= 19)
+						System.out.print(" ");
+					else if (j > 19 && j <= 21)
+						System.out.print("*");
+					else if (j > 21 && j <= 24)
+						System.out.print(" ");
+					else if (j > 24 && j <= 26)
+						System.out.print("*");
+					else if (j > 26)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+					break;
+				case 7:
+					if (j <= 6)
+						System.out.print(" ");
+					else if (j > 6 && j <= 8)
+						System.out.print("*");
+					else if (j > 8 && j <= 9)
+						System.out.print(" ");
+					else if (j > 9 && j <= 11)
+						System.out.print("*");
+					else if (j > 11 && j <= 20)
+						System.out.print(" ");
+					else if (j > 20 && j <= 22)
+						System.out.print("*");
+					else if (j > 22 && j <= 23)
+						System.out.print(" ");
+					else if (j > 23 && j <= 25)
+						System.out.print("*");
+					else if (j > 25)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+					break;
+				case 8:
+					if (j <= 7)
+						System.out.print(" ");
+					else if (j > 7 && j <= 10)
+						System.out.print("*");
+					else if (j > 10 && j <= 21)
+						System.out.print(" ");
+					else if (j > 21 && j <= 24)
+						System.out.print("*");
+					else if (j > 24)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+					break;
+				case 9:
+					if (j <= 8)
+						System.out.print(" ");
+					else if (j == 9)
+						System.out.print("*");
+					else if (j > 9 && j <= 22)
+						System.out.print(" ");
+					else if (j == 23)
+						System.out.print("*");
+					else if (j > 23)
+						System.out.print(" ");
+					else
+						System.out.print("*");
+					break;
+				}
+			}
+			System.out.println();
+		}
+
+	}
+
+	public int SwapNibbles(int decToBinary) {
+		return (((decToBinary & 0x0F) << 4) | ((decToBinary & 0xF0) >> 4));
+
+	}
 
 }
