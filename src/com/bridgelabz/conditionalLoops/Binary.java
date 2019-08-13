@@ -1,3 +1,13 @@
+/******************************************************************************
+ *  Purpose: Program for finding decimal to binary.
+ *  		 
+ *
+ *  @author  Rishikesh Mhatre
+ *  @version 1.0
+ *  @since   12-08-2019
+ *
+ ******************************************************************************/
+
 package com.bridgelabz.conditionalLoops;
 
 import java.util.Scanner;
@@ -12,7 +22,7 @@ public class Binary {
 		number = scanner.nextInt();
 		while (number > 0) {
 			mod = number % 2;
-			binary = binary + "" + mod;
+			binary = mod+""+binary;
 			number = number / 2;
 		}
 		System.out.println(binary);

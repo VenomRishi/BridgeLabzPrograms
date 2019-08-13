@@ -569,6 +569,12 @@ public class Utility {
 		return csc;
 	}
 
+	/**
+	 * Purpose: Convert velocity into Speed
+	 * 
+	 * @param velocity	input from user
+	 * @return	speed 
+	 */
 	public double velocityIntoSpeed(int velocity) {
 		double speed;
 		speed = velocity * 0.609;
@@ -576,11 +582,11 @@ public class Utility {
 	}
 
 	/**
-	 * Purpose:
+	 * Purpose:	Calculate Wind Chill using mathematical formulas
 	 * 
-	 * @param temperatureInFahrenheit
-	 * @param speed
-	 * @return
+	 * @param temperatureInFahrenheit	input from user
+	 * @param speed		velocity converted into speed using formula
+	 * @return		windChillValue	it will depend on mathematical formula
 	 */
 	public double CalculateWindChill(double temperatureInFahrenheit, double speed) {
 		double a, windChill, b, c;
@@ -588,7 +594,7 @@ public class Utility {
 		b = 0.4275 * temperatureInFahrenheit;
 		c = b - 35.75;
 		windChill = 35.74 + a + c * speed;
-		// windchill cannot be negative
+		// wind chill cannot be negative
 		windChill = Math.abs(windChill);
 		return windChill;
 	}
@@ -611,18 +617,20 @@ public class Utility {
 	}
 
 	/**
+	 * Purpose: To find Power of number using power value
+	 * 
 	 * @param number
 	 * @param powerValue
 	 * @return
 	 */
 	public int PowerOfTwo(int number, int powerValue) {
-		int result;
-		result = (int) Math.pow(number, powerValue);
-		return result;
+		return (int) Math.pow(number, powerValue);
 	}
 
 	/**
-	 * @param number
+	 * Purpose: Method for printing Harmonic series
+	 * 
+	 * @param number 	input from user
 	 */
 	public void PrintHarmonic(int number) {
 		System.out.print("H=");
@@ -639,237 +647,250 @@ public class Utility {
 	}
 
 	/**
-	 * @param c
-	 * @return
+	 * Purpose: Finding Square root using newton's method
+	 * 
+	 * @param c		input from user
+	 * @return		square root value of number using newton's method
 	 */
 	public double findSquareRootUsingNewtonsMethod(int c) {
-		double t,epsilon;
+		double t, epsilon;
 		t = c;
 //		epsilon=1*(Math.pow(10, -15));
-		epsilon=1e-15;
-		
-		while (Math.abs(t - c/t) > epsilon*t) {
-            t = (c/t + t) / 2.0;
-        }
+		epsilon = 1e-15;
+
+		while (Math.abs(t - c / t) > epsilon * t) {
+			t = (c / t + t) / 2.0;
+		}
 		return t;
 	}
 
 	/**
-	 * @param numberForCoinFlip
+	 * Purpose: to find Flip Coin Simulation
+	 * 
+	 * @param numberForCoinFlip	number of times coin will flip
 	 */
 	public void FlipCoin(int numberForCoinFlip) {
-		double percentageOfHeads,percentageOfTails;
-		int headsCount=0,tailsCount=0;
-		
-		for(int i=1;i<=numberForCoinFlip;i++) {
-			if(Math.random()<.5) {
+		double percentageOfHeads, percentageOfTails;
+		int headsCount = 0, tailsCount = 0;
+
+		for (int i = 1; i <= numberForCoinFlip; i++) {
+			if (Math.random() < .5) {
 				System.out.println("Heads");
 				headsCount++;
-			}else {
+			} else {
 				System.out.println("Tails");
 				tailsCount++;
 			}
 		}
-		percentageOfHeads=(int)headsCount*100/numberForCoinFlip;
-		percentageOfTails=(int)tailsCount*100/numberForCoinFlip;
-		System.out.println("Percentage of Heads is : "+percentageOfHeads);
-		System.out.println("Percentage of Tails is : "+percentageOfTails);
-		
+		percentageOfHeads = (int) headsCount * 100 / numberForCoinFlip;
+		percentageOfTails = (int) tailsCount * 100 / numberForCoinFlip;
+		System.out.println("Percentage of Heads is : " + percentageOfHeads);
+		System.out.println("Percentage of Tails is : " + percentageOfTails);
+
 	}
+
 	/**
-	 * @param number
-	 * @return
+	 * Purpose: For finding prime number
+	 * 
+	 * @param number	input from user
+	 * @return	true or false depending upon prime number or not
 	 */
 	public boolean isPrime(int number) {
-		if(number==0||number==1) {
+		if (number == 0 || number == 1) {
 			return false;
-		}else {
-			for (int i=2;i<=number/2;i++) {
-				if(number%i==0) {
+		} else {
+			for (int i = 2; i <= number / 2; i++) {
+				if (number % i == 0) {
 					return false;
 				}
 			}
 			return true;
 		}
-		
+
 	}
 
 	public double CalculateAngleX(int x) {
-		
-		return x%(2*180);
+
+		return x % (2 * 180);
 	}
 
 	/**
-	 * @param angleX
-	 * @param noOddSeries
+	 * Purpose: Method for Printing Sin X Series using taylor series
+	 * 
+	 * @param angleX		angle radian
+	 * @param noOddSeries	
 	 */
 	public void PrintSinXSeries(double angleX, int noOddSeries) {
-		
-		int count=1;
 
-		System.out.print("Sin("+angleX+") = ");
-		System.out.print(angleX +" - ");
-		for(int i=3;i<=noOddSeries;) {
-			if(count%2!=0) {
-				System.out.print(Math.pow(angleX, i)+" / "+CalculateFactorial(i));
-				if(i!=noOddSeries) {
+		int count = 1;
+
+		System.out.print("Sin(" + angleX + ") = ");
+		System.out.print(angleX + " - ");
+		for (int i = 3; i <= noOddSeries;) {
+			if (count % 2 != 0) {
+				System.out.print(Math.pow(angleX, i) + " / " + CalculateFactorial(i));
+				if (i != noOddSeries) {
 					System.out.print(" + ");
 				}
-				
+
 				count++;
-				
-			}else {
-				System.out.print(Math.pow(angleX, i)+" / "+CalculateFactorial(i));
-				if(i!=noOddSeries) {
-					System.out.print(" - ");	
+
+			} else {
+				System.out.print(Math.pow(angleX, i) + " / " + CalculateFactorial(i));
+				if (i != noOddSeries) {
+					System.out.print(" - ");
 				}
 				count++;
 			}
-			i=i+2;
-			
+			i = i + 2;
+
 		}
-		
+
 	}
+
 	/**
-	 * @param number
-	 * @return
+	 * Purpose: Find Factorial
+	 * 
+	 * @param number	input taken from user
+	 * @return			fact	factorial of number
 	 */
 	public int CalculateFactorial(int number) {
-		int fact=1;
-		for (int i=1;i<=number;i++) {
-			fact*=i;
+		int fact = 1;
+		for (int i = 1; i <= number; i++) {
+			fact *= i;
 		}
 		return fact;
 	}
 
 	/**
+	 * Purpose: Method for Printing Cos X Series using taylor series
+	 * 
 	 * @param angleX
 	 * @param noEvenSeries
 	 */
 	public void PrintCosXSeries(double angleX, int noEvenSeries) {
-		int count=1;
-		
-		System.out.print("Sin("+angleX+") = ");
-		System.out.print( "1 - ");
-		for(int i=2;i<=noEvenSeries;) {
-			if(count%2==0) {
-				System.out.print(Math.pow(angleX, i)+" / "+CalculateFactorial(i));
-				if(i!=noEvenSeries) {
+		int count = 1;
+
+		System.out.print("Sin(" + angleX + ") = ");
+		System.out.print("1 - ");
+		for (int i = 2; i <= noEvenSeries;) {
+			if (count % 2 == 0) {
+				System.out.print(Math.pow(angleX, i) + " / " + CalculateFactorial(i));
+				if (i != noEvenSeries) {
 					System.out.print(" + ");
 				}
-				
+
 				count++;
-				
-			}else {
-				System.out.print(Math.pow(angleX, i)+" / "+CalculateFactorial(i));
-				if(i!=noEvenSeries) {
-					System.out.print(" - ");	
+
+			} else {
+				System.out.print(Math.pow(angleX, i) + " / " + CalculateFactorial(i));
+				if (i != noEvenSeries) {
+					System.out.print(" - ");
 				}
 				count++;
 			}
-			i=i+2;
-			
+			i = i + 2;
+
 		}
-		
+
 	}
 
 	/**
-	 * @param stake
-	 * @param goals
-	 * @param days
+	 * Purpose: Method for Gamling Simulation
+	 * 
+	 * @param stake		amount in rupees
+	 * @param goals		amount goal to win
+	 * @param days		how much days for playing the bet
 	 */
 	public void GamlingSimulation(int stake, int goals, int days) {
-	
-		int tempStake=stake;
-		int trails=0;
-		int win=0;
+
+		int tempStake = stake;
+		int trails = 0;
+		int win = 0;
 		int percentageWin;
-		for(int i=0;i<=days;i++) {
-			while(tempStake>0&&tempStake<goals) {
-				if(Math.random()>0.5) {
+		for (int i = 0; i <= days; i++) {
+			while (tempStake > 0 && tempStake < goals) {
+				if (Math.random() > 0.5) {
 					tempStake++;
 					trails++;
 //					countWin++;
-				}else {
+				} else {
 					tempStake--;
 					trails++;
 //					countLoose++;
 				}
-				if(tempStake==goals) 
+				if (tempStake == goals)
 					win++;
 			}
-			
-			
-			
-		}
-		percentageWin=win*100/days;
-		
-		
 
-		
-		System.out.println("Gamler Won :"+win+" times");
-		System.out.println("Percentage of Winning is :"+percentageWin);
-		System.out.println("Avg bets made :"+trails/days);
-		
-		
-		
+		}
+		percentageWin = win * 100 / days;
+
+		System.out.println("Gamler Won :" + win + " times");
+		System.out.println("Percentage of Winning is :" + percentageWin);
+		System.out.println("Avg bets made :" + trails / days);
+
 	}
 
 	/**
-	 * @param numberArray
-	 * @return
+	 * Purpose: Method to find repeated in array
+	 * 
+	 * @param numberArray array of number
+	 * @return return repeated number in array
 	 */
 	public int findRepeatedInArray(int[] numberArray) {
-		
-		for(int i=0;i<numberArray.length;i++) {
-			for(int j=i+1;j<numberArray.length;j++) {
-				if(numberArray[i]==numberArray[j]) {
+
+		for (int i = 0; i < numberArray.length; i++) {
+			for (int j = i + 1; j < numberArray.length; j++) {
+				if (numberArray[i] == numberArray[j]) {
 					return numberArray[i];
 				}
-			}	
+			}
 		}
 		return 0;
-		
+
 	}
 
 	/**
-	 * @param smallest
-	 * @param secondSmallest
-	 * @param numberArray
-	 * @return
+	 * Purpose: Method for finding second smallest
+	 * 
+	 * @param smallest       smallest number is Integer.MAX_VALUE
+	 * @param secondSmallest secondSmallest number is Integer.MIN_VALUE
+	 * @param numberArray    array of number
+	 * @return secondSmallest method will calculate and returns second smallest
+	 *         number within array
 	 */
 	public int findSecondSmaller(int smallest, int secondSmallest, int[] numberArray) {
-		for(int i=0;i<numberArray.length;i++) {
-			if(numberArray[i]<smallest) {
-				secondSmallest=smallest;
-				smallest=numberArray[i];
-			}
-			else if(numberArray[i]<secondSmallest&&numberArray[i]!=smallest) {
-				secondSmallest=numberArray[i];
+		for (int i = 0; i < numberArray.length; i++) {
+			if (numberArray[i] < smallest) {
+				secondSmallest = smallest;
+				smallest = numberArray[i];
+			} else if (numberArray[i] < secondSmallest && numberArray[i] != smallest) {
+				secondSmallest = numberArray[i];
 			}
 		}
 		return secondSmallest;
 	}
 
 	/**
-	 * @param largest
-	 * @param secondLargest
-	 * @param numberArray
-	 * @return
+	 * Purpose: Method for finding second largest
+	 * 
+	 * @param largest       largest number is Integer.MIN_VALUE
+	 * @param secondLargest secondLargest number is Integer.MIN_VALUE
+	 * @param numberArray   array of number
+	 * @return secondLargest method will calculate and returns second largest number
+	 *         within array
 	 */
 	public int findSecondLargest(int largest, int secondLargest, int[] numberArray) {
-		for(int i=0;i<numberArray.length;i++) {
-			if(numberArray[i]>largest) {
-				secondLargest=largest;
-				largest=numberArray[i];
-			}
-			else if(numberArray[i]>secondLargest&&numberArray[i]!=largest) {
-				secondLargest=numberArray[i];
+		for (int i = 0; i < numberArray.length; i++) {
+			if (numberArray[i] > largest) {
+				secondLargest = largest;
+				largest = numberArray[i];
+			} else if (numberArray[i] > secondLargest && numberArray[i] != largest) {
+				secondLargest = numberArray[i];
 			}
 		}
 		return secondLargest;
 	}
-
-
 
 }

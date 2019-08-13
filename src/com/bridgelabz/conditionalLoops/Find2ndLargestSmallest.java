@@ -1,3 +1,14 @@
+/******************************************************************************
+ *  Purpose: Program to find 2nd smallest and 2nd largest in the array
+ *  		 without sorting the array.
+ *  		 
+ *
+ *  @author  Rishikesh Mhatre
+ *  @version 1.0
+ *  @since   12-08-2019
+ *
+ ******************************************************************************/
+
 package com.bridgelabz.conditionalLoops;
 
 import com.bridgelabz.utility.Utility;

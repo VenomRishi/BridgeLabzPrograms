@@ -1,3 +1,13 @@
+/******************************************************************************
+ *  Purpose: Program to find prime number between range is given by user.
+ *  		 
+ *
+ *  @author  Rishikesh Mhatre
+ *  @version 1.0
+ *  @since   10-08-2019
+ *
+ ******************************************************************************/
+
 package com.bridgelabz.conditionalLoops;
 
 import java.util.Scanner;

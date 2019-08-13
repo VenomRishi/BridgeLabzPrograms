@@ -1,3 +1,13 @@
+/******************************************************************************
+ *  Purpose: Program is written for finding Prime Factorial of number.
+ *  		 
+ *
+ *  @author  Rishikesh Mhatre
+ *  @version 1.0
+ *  @since   12-08-2019
+ *
+ ******************************************************************************/
+
 package com.bridgelabz.conditionalLoops;
 
 import java.util.Scanner;
