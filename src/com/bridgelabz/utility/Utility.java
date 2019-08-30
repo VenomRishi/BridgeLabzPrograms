@@ -828,12 +828,11 @@ public class Utility {
 	}
 
 	/**
-	 * @param smallest
-	 * @param secondSmallest
 	 * @param numberArray
 	 * @return
 	 */
-	public int findSecondSmaller(int smallest, int secondSmallest, int[] numberArray) {
+	public int findSecondSmaller(int[] numberArray) {
+		int smallest=Integer.MAX_VALUE, secondSmallest=Integer.MAX_VALUE;
 		for (int i = 0; i < numberArray.length; i++) {
 			if (numberArray[i] < smallest) {
 				secondSmallest = smallest;
@@ -846,12 +845,11 @@ public class Utility {
 	}
 
 	/**
-	 * @param largest
-	 * @param secondLargest
 	 * @param numberArray
 	 * @return
 	 */
-	public int findSecondLargest(int largest, int secondLargest, int[] numberArray) {
+	public int findSecondLargest(int[] numberArray) {
+		int largest=0,secondLargest=0;
 		for (int i = 0; i < numberArray.length; i++) {
 			if (numberArray[i] > largest) {
 				secondLargest = largest;

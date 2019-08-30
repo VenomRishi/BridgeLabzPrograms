@@ -19,7 +19,7 @@ public class Binary {
 //		}
 //		System.out.println(binary);
 //		scanner.close();
-		int decimalNumber, a;
+		int decimalNumber, r;
 		int decToBinary;
 		int resultOfSwapNibbles;
 		String x = "";
@@ -33,8 +33,8 @@ public class Binary {
 		} else {
 
 			while (decimalNumber > 0) {
-				a = decimalNumber % 2;
-				x = a + "" + x;
+				r = decimalNumber % 2;
+				x = r + "" + x;
 				decimalNumber = decimalNumber / 2;
 			}
 
